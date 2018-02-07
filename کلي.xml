@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" ?>
+<Database name="Reports" servertype="SQL" lastacnt="27" serveraddress="192.168.100.41" >
+   <Entities>
+           <Entity title="فهرست قبول شدگان" name="vwGhaboolShodehService">
+              <Field title="کد ملي" name="CodeMelli" type="string"  />
+              <Field title="شماره پرونده" name="ShomarehParvandeh" type="numeric"  />
+              <Field title="دوره" name="DorehText" type="string"  />
+              <Field title="فيلد گزينشي" name="FieldGozineshiText" type="string"  />
+              <Field title="وضعيت متقاضي" name="VaziatMoteghaziText" type="string"  />
+              <Field title="وضعيت پرونده" name="VaziatParvandehText" type="string"  />
+              <Field title="آخرين ويرايش کننده" name="LastModifiedBy" type="numeric"  />
+              <Field title="تاريخ آخرين ويرايش" name="LastModifiedDate" type="string"  />
+              <Field title="Status" name="Status" type="numeric"  />
+              <Field title="PreviousUID" name="PreviousUID" type="numeric"  />
+          </Entity>
+           <Entity title="فهرست اشخاص" name="VwPerson_Simple_ExternalSystem">
+              <Field title="نام" name="FirstName" type="string"  />
+              <Field title="کد ملي" name="NationalCode" type="string"  />
+              <Field title="تاريخ تولد" name="BirthDate" type="string"  />
+              <Field title="نام خانوادگي" name="LastName" type="string"  />
+              <Field title="نام پدر" name="FatherName" type="string"  />
+          </Entity>
+    </Entities>
+    <EntityRelations>
+   <ER title="فهرست قبول شدگان" name="vwGhaboolShodehService" alias="en1"> 
+
+      <ER title="فهرست اشخاص" name="VwPerson_Simple_ExternalSystem" alias="en27"> 
+          <JS>en1.CodeMelli=en27.NationalCode</JS>
+      </ER>
+   </ER>
+   <ER title="فهرست اشخاص" name="VwPerson_Simple_ExternalSystem" alias="en24"> 
+   </ER>
+     </EntityRelations>
+     </Database>
